@@ -1,3 +1,77 @@
+var config = {
+    apiKey: "AIzaSyB3sEKhsM8UbchaFKntM_LP0aj7itS4F_g",
+    authDomain: "neighbourhood-finder.firebaseapp.com",
+    databaseURL: "https://neighbourhood-finder.firebaseio.com",
+    projectId: "neighbourhood-finder",
+    storageBucket: "neighbourhood-finder.appspot.com",
+    messagingSenderId: "330512561813"
+};
+firebase.initializeApp(config);
+var database = firebase.database();
+firebase.database().ref('/Cow').set({
+    Cow: 'moo',
+});
+//function used to read in fireBase data
+function importanceUserData(importance1, importance2, importance3, importance4,
+    importance5, importance6, importance7, importance8, importance9, importance10) {
+    //creates an object
+    firebase.database().ref('importance').set({
+        importance: 'very important',
+        housePrice: importance1,
+        parks: importance2,
+        recreationCentres: importance3,
+        schools: importance4,
+        libraries: importance5,
+        golfCourses: importance6,
+        malls: importance7,
+        museums: importance8,
+        restaurants: importance9,
+        groceryStores: importance10
+    });
+}
+
+//retrieve housePriceImportance
+var ref = firebase.database().ref('importance/housePrice');
+ref.on('value', function(snapshot) {
+    console.log(snapshot.val());
+});
+var parksImportance = firebase.database().ref('importance/parks');
+parksImportance.on('value', function(snapshot) {
+    console.log(snapshot.val());
+});
+var recreationCentresImportance = firebase.database().ref('importance/recreationCentres');
+recreationCentresImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var schoolsImportance = firebase.database().ref('importance/schools');
+schoolsImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var librariesImportance = firebase.database().ref('importance/libraries');
+librariesImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var golfCoursesImportance = firebase.database().ref('importance/golfCourses');
+golfCoursesImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var mallsImportance = firebase.database().ref('importance/malls');
+mallsImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+}); 
+var museumsImportance = firebase.database().ref('importance/museums');
+museumsImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var restaurantsImportance = firebase.database().ref('importance/restaurants');
+restaurantsImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var groceryStoriesImportance = firebase.database().ref('importance/groceryStores');
+groceryStoriesImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+
 var platform = new H.service.Platform({
     'app_id': 'xGmQiK6gdcySbGHGzc1F',
     'app_code': 'HWnoi_5vJyFMRKc4OjgYLw'
@@ -97,6 +171,7 @@ for (var i = 0; i < links.length; i++) {
     // Open a new connection, using the GET request on the URL endpoint
     request[i].open('GET', links[i], true);
 }
+
 var finished = 0;
 var doc;
 request[0].onload = function() {
@@ -105,49 +180,49 @@ request[0].onload = function() {
     processData();
 }
 request[0].send();
-request[1].onload = function() {
+request[1].onload = function () {
     data[1] = JSON.parse(this.response);
     finished++;
     processData();
 }
 request[1].send();
-request[2].onload = function() {
+request[2].onload = function () {
     data[2] = JSON.parse(this.response);
     finished++;
     processData();
 }
 request[2].send();
-request[3].onload = function() {
+request[3].onload = function () {
     data[3] = JSON.parse(this.response);
     finished++;
     processData();
 }
 request[3].send();
-request[4].onload = function() {
+request[4].onload = function () {
     data[4] = JSON.parse(this.response);
     finished++;
     processData();
 }
 request[4].send();
-request[5].onload = function() {
+request[5].onload = function () {
     data[5] = JSON.parse(this.response);
     finished++;
     processData();
 }
 request[5].send();
-request[6].onload = function() {
+request[6].onload = function () {
     data[6] = JSON.parse(this.response);
     finished++;
     processData();
 }
 request[6].send();
-request[7].onload = function() {
+request[7].onload = function () {
     data[7] = JSON.parse(this.response);
     finished++;
     processData();
 }
 request[7].send();
-request[8].onload = function() {
+request[8].onload = function () {
     data[8] = JSON.parse(this.response);
     finished++;
     processData();
@@ -309,7 +384,6 @@ function processData() {
         }
         golfDistances.push(minDistance * 100);
     }
-
     // // Food stores
     // foodDistances = new Array(landmarks.length).fill(100);
     // for (var k = 0; k < data[3].features.length; k++) {
