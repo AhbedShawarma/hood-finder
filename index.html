@@ -36,6 +36,59 @@
 
         </div>
 
+        <div id = "topHoods">
+            <h1 style="font-family: IkarosR">Your top hoods</h1>
+            <table style="padding: 10px 0px">
+                <tr>
+                    <td>Ranking</td>
+                    <td>Neighbourhood</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td id="1"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id="2"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td id="3"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td id="4"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td id="5"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="legend">
+            <h1 style="font-family: IkarosR">Legend</h1>
+            <br />
+            <table>
+                <tr height="20px">
+                    <td class="square" style="background-color: hsla(120, 100%, 50%, 0.5)"></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Excellent match</td>
+                </tr>
+                <tr height="20px">
+                </tr>
+                <tr height="20px">
+                    <td class="square" style="background-color: hsla(60, 100%, 50%, 0.5)"></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Average match</td>
+                </tr>
+                <tr height="20px">
+                </tr>
+                <tr height="20px">
+                    <td class="square" style="background-color: hsla(0, 100%, 50%, 0.5)"></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Poor match</td>
+                </tr>
+            </table>
+        </div>
+
         <div id="tabformatting">
 
             <div id = "personalprofile" class = "active">
@@ -176,11 +229,11 @@
                     <input type="range" min="1" max="5" value="3 " class="slider" id="housePrice" onchange="user.sliderData.housePrice = document.getElementById('housePrice').value; setNeighborhoods();">
                 </div>
                 <br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    Very Important</p>
+                <p style="font-size:12px;margin-left:50px;">$1250&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    $1750&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    $2250</p>
                 <br />
                 <br />
                 <p>How important is it for you to have a house at this price?</p>
@@ -189,9 +242,9 @@
                     <input type="range" min="1" max="5" value="3 " class="slider" id="houseImportance" onchange="user.sliderData.houseImportance = document.getElementById('houseImportance').value; setNeighborhoods();">
                 </div>
                 <br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;
+                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Very Important</p>
             </div>
@@ -231,9 +284,9 @@
                     <input type="range" min="1" max="5" value="3 " class="slider" id="recImportance" onchange="user.sliderData.recImportance = document.getElementById('recImportance').value; setNeighborhoods();">
                 </div>
                 <br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Very Important</p>
                 <br />
@@ -271,9 +324,9 @@
                     <input type="range" min="1" max="5" value="3 " class="slider" id="parkImportance" onchange="user.sliderData.parkImportance = document.getElementById('parkImportance').value; setNeighborhoods();">
                 </div>
                 <br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Very Important</p>
                 <br />
@@ -309,9 +362,9 @@
 
                     <input type="range" min="1" max="5" value="3 " class="slider" id="gcImportance" onchange="user.sliderData.gcImportance = document.getElementById('gcImportance').value; setNeighborhoods();">
                 </div><br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Very Important</p>
                 <br /><br /><br /><br />
@@ -352,9 +405,9 @@
                     <input type="range" min="1" max="5" value="3 " class="slider" id="comImportance" onchange="user.sliderData.comImportance = document.getElementById('comImportance').value; setNeighborhoods();">
                 </div>
                 <br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Very Important</p>
                 <br />
@@ -392,9 +445,9 @@
                     <input type="range" min="1" max="5" value="3 " class="slider" id="mgImportance" onchange="user.sliderData.mgImportance = document.getElementById('mgImportance').value; setNeighborhoods();">
                 </div>
                 <br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Very Important</p>
             </div>
@@ -434,9 +487,9 @@
                     <input type="range" min="1" max="5" value="3 " class="slider" id="groceryImportance" onchange="user.sliderData.groceryImportance = document.getElementById('groceryImportance').value; setNeighborhoods();">
                 </div>
                 <br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Very Important</p>
                 <br />
@@ -474,12 +527,12 @@
                     <input type="range" min="1" max="5" value="3 " class="slider" id="restImportance" onchange="user.sliderData.restImportance = document.getElementById('restImportance').value; setNeighborhoods();">
                 </div>
                 <br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Very Important</p>
-                
+
             </div>
 
             <div id = "educationmenu">
@@ -517,9 +570,9 @@
                     <input type="range" min="1" max="5" value="3 " class="slider" id="schoolImportance" onchange="user.sliderData.schoolImportance = document.getElementById('schoolImportance').value; setNeighborhoods();">
                     </div>
                     <br /><br />
-                    <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         Very Important</p>
                     <br />
@@ -548,18 +601,18 @@
                     <br />
                     <br />
                     <br />
-                    <br />  
+                    <br />
                     <p>How important is it to have library at your preferred distance?</p>
                     <br />
                     <br />
-                    <br />   
+                    <br />
                     <div class = "slidecontainer">
                         <input type="range" min="1" max="5" value="3 " class="slider" id="libImportance">
                     </div>
                     <br /><br />
-                <p style="font-size:12px;margin-left:20px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <p style="font-size:12px;margin-left:16px;">Not Very Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    No Preference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Very Important</p>
                 </div>
@@ -593,7 +646,7 @@
             x.send(null);
             function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 12,
+                    zoom: 16,
                     center: {
                         lat: 43.2557,
                         lng: -79.8711

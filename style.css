@@ -18,7 +18,7 @@ body {
     position: fixed;
     width: 55.8%;
     left: 44.2%;
-    height: 680px;
+    height: 440px;
     float: left;
 }
 
@@ -27,8 +27,44 @@ body {
     src: url('Ikaros-Regular.otf');
 }
 
-.topHoods {
-    
+@font-face {
+    font-family: "IkarosL";
+    src: url('Ikaros-Light.otf');
+}
+
+#topHoods {
+    position: fixed;
+    left: 44.2%;
+    bottom: 0;
+    background-color: white;
+    height: 200px;
+    width: 32%;
+    z-index: 9999;
+    padding: 20px 20px;
+}
+
+table {
+    width: 90%;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+}
+
+#legend {
+    position: fixed;
+    left: 76.2%;
+    bottom: 0;
+    background-color: white;
+    height: 200px;
+    width: 23.8%;
+    z-index: 9999;
+    padding: 20px 20px;
+}
+
+td {
+    font-family: IkarosL;
 }
 
 #mainheader {
