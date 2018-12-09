@@ -1,18 +1,92 @@
+var config = {
+    apiKey: "AIzaSyB3sEKhsM8UbchaFKntM_LP0aj7itS4F_g",
+    authDomain: "neighbourhood-finder.firebaseapp.com",
+    databaseURL: "https://neighbourhood-finder.firebaseio.com",
+    projectId: "neighbourhood-finder",
+    storageBucket: "neighbourhood-finder.appspot.com",
+    messagingSenderId: "330512561813"
+};
+firebase.initializeApp(config);
+var database = firebase.database();
+firebase.database().ref('/Cow').set({
+    Cow: 'moo',
+});
+//function used to read in fireBase data
+function importanceUserData(importance1, importance2, importance3, importance4,
+    importance5, importance6, importance7, importance8, importance9, importance10) {
+    //creates an object
+    firebase.database().ref('importance').set({
+        importance: 'very important',
+        housePrice: importance1,
+        parks: importance2,
+        recreationCentres: importance3,
+        schools: importance4,
+        libraries: importance5,
+        golfCourses: importance6,
+        malls: importance7,
+        museums: importance8,
+        restaurants: importance9,
+        groceryStores: importance10
+    });
+}
+
+//retrieve housePriceImportance
+var ref = firebase.database().ref('importance/housePrice');
+ref.on('value', function(snapshot) {
+    console.log(snapshot.val());
+});
+var parksImportance = firebase.database().ref('importance/parks');
+parksImportance.on('value', function(snapshot) {
+    console.log(snapshot.val());
+});
+var recreationCentresImportance = firebase.database().ref('importance/recreationCentres');
+recreationCentresImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var schoolsImportance = firebase.database().ref('importance/schools');
+schoolsImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var librariesImportance = firebase.database().ref('importance/libraries');
+librariesImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var golfCoursesImportance = firebase.database().ref('importance/golfCourses');
+golfCoursesImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var mallsImportance = firebase.database().ref('importance/malls');
+mallsImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+}); 
+var museumsImportance = firebase.database().ref('importance/museums');
+museumsImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var restaurantsImportance = firebase.database().ref('importance/restaurants');
+restaurantsImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+var groceryStoriesImportance = firebase.database().ref('importance/groceryStores');
+groceryStoriesImportance.on('value', function (snapshot) {
+    console.log(snapshot.val());
+});
+
 var platform = new H.service.Platform({
-  'app_id': 'xGmQiK6gdcySbGHGzc1F',
-  'app_code': 'HWnoi_5vJyFMRKc4OjgYLw'
+    'app_id': 'xGmQiK6gdcySbGHGzc1F',
+    'app_code': 'HWnoi_5vJyFMRKc4OjgYLw'
 });
 
 var links = ['https://opendata.arcgis.com/datasets/4f1b554e743b423f9574e7a3ca814cce_6.geojson',
-            'https://opendata.arcgis.com/datasets/272667665de646768db14e9fa1676405_11.geojson',
-            'https://opendata.arcgis.com/datasets/cccae6f029334927856da6e20a50561f_19.geojson',
-            'https://opendata.arcgis.com/datasets/59afd6534e4849ccae93c9ed0049a445_14.geojson',
-            'https://opendata.arcgis.com/datasets/67a54ea25d944cf7b66750ba57da822c_1.geojson',
-            'https://opendata.arcgis.com/datasets/51c6d946f91249828bc1c594ce1b27d1_16.geojson',
-            'https://opendata.arcgis.com/datasets/6728810fb847489985d4b735502205a0_2.geojson',
-            'https://opendata.arcgis.com/datasets/85c1b5c9e931470d94f0c9ff5acaa341_2.geojson',
-            'https://opendata.arcgis.com/datasets/7b46f5eabbe0496fb168860ddc22fa35_14.geojson'
-            ];
+    'https://opendata.arcgis.com/datasets/272667665de646768db14e9fa1676405_11.geojson',
+    'https://opendata.arcgis.com/datasets/cccae6f029334927856da6e20a50561f_19.geojson',
+    'https://opendata.arcgis.com/datasets/59afd6534e4849ccae93c9ed0049a445_14.geojson',
+    'https://opendata.arcgis.com/datasets/67a54ea25d944cf7b66750ba57da822c_1.geojson',
+    'https://opendata.arcgis.com/datasets/51c6d946f91249828bc1c594ce1b27d1_16.geojson',
+    'https://opendata.arcgis.com/datasets/6728810fb847489985d4b735502205a0_2.geojson',
+    'https://opendata.arcgis.com/datasets/85c1b5c9e931470d94f0c9ff5acaa341_2.geojson',
+    'https://opendata.arcgis.com/datasets/7b46f5eabbe0496fb168860ddc22fa35_14.geojson'
+];
 
 function convertPlanningUnit(planningUnit) {
     if (planningUnit < 2000) {
@@ -76,7 +150,7 @@ function convertPlanningUnit(planningUnit) {
 
 var data = new Array(links.length);
 var request = new Array(links.length);
-var housePricing = [24774.174,21806.94,21110.641,16994.896,19759.48,19240.65,18974.046,20169.58,20851.584,22058.192,18773.304,26295.85,22102.42,20056.894,25224.935];
+var housePricing = [24774.174, 21806.94, 21110.641, 16994.896, 19759.48, 19240.65, 18974.046, 20169.58, 20851.584, 22058.192, 18773.304, 26295.85, 22102.42, 20056.894, 25224.935];
 var malls = [[43.233093, -79.922762], [43.233980, -79.910667], [43.205537, -79.894736], [43.230117, -79.879270], [43.236417, -79.877028], [43.237034, -79.876974], [43.217975, -79.861342], [43.251600, -79.851981], [43.258507, -79.870821], [43.258460, -79.869265], [43.252529, -79.810568], [43.230794, -79.765496]];
 
 for (var i = 0; i < links.length; i++) {
@@ -84,39 +158,39 @@ for (var i = 0; i < links.length; i++) {
     // Open a new connection, using the GET request on the URL endpoint
     request[i].open('GET', links[i], true);
 }
-request[0].onload = function() {
+request[0].onload = function () {
     data[0] = JSON.parse(this.response);
 }
 request[0].send();
-request[1].onload = function() {
+request[1].onload = function () {
     data[1] = JSON.parse(this.response);
 }
 request[1].send();
-request[2].onload = function() {
+request[2].onload = function () {
     data[2] = JSON.parse(this.response);
 }
 request[2].send();
-request[3].onload = function() {
+request[3].onload = function () {
     data[3] = JSON.parse(this.response);
 }
 request[3].send();
-request[4].onload = function() {
+request[4].onload = function () {
     data[4] = JSON.parse(this.response);
 }
 request[4].send();
-request[5].onload = function() {
+request[5].onload = function () {
     data[5] = JSON.parse(this.response);
 }
 request[5].send();
-request[6].onload = function() {
+request[6].onload = function () {
     data[6] = JSON.parse(this.response);
 }
 request[6].send();
-request[7].onload = function() {
+request[7].onload = function () {
     data[7] = JSON.parse(this.response);
 }
 request[7].send();
-request[8].onload = function() {
+request[8].onload = function () {
     data[8] = JSON.parse(this.response);
 }
 request[8].send();
@@ -236,7 +310,7 @@ function processData() {
         var geocoder = platform.getGeocodingService();
         geocoder.geocode({
             searchText: data[3].features[k].properties.BUSINESS_ADDRESS
-        }, function(result) {
+        }, function (result) {
             var latitude = result.Response.View[0].Result[0].Location.DisplayPosition.Latitude, longitude = result.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
             for (var i = 0; i < landmarks.length; i++) {
                 var coordinates = landmarks[i].getElementsByTagName("coordinates")[0].childNodes[0].nodeValue.split(" ").map(a => a.split(",").map(b => parseFloat(b)));
@@ -244,8 +318,8 @@ function processData() {
                 if (!isNaN(distance1))
                     foodDistances[i] = Math.min(foodDistances[i], distance1 * 100);
             }
-        }, function(e) {
-          //alert(e);
+        }, function (e) {
+            //alert(e);
         });
     }
 
@@ -255,7 +329,7 @@ function processData() {
         var geocoder = platform.getGeocodingService();
         geocoder.geocode({
             searchText: data[7].features[k].properties.BUSINESS_ADDRESS
-        }, function(result) {
+        }, function (result) {
             var latitude = result.Response.View[0].Result[0].Location.DisplayPosition.Latitude, longitude = result.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
             for (var i = 0; i < landmarks.length; i++) {
                 var coordinates = landmarks[i].getElementsByTagName("coordinates")[0].childNodes[0].nodeValue.split(" ").map(a => a.split(",").map(b => parseFloat(b)));
@@ -263,15 +337,15 @@ function processData() {
                 if (!isNaN(distance1))
                     restaurantDistances[i] = Math.min(foodDistances[i], distance1 * 100);
             }
-        }, function(e) {
-          //alert(e);
+        }, function (e) {
+            //alert(e);
         });
     }
 }
 
 function distance(list, point1) {
     var point2 = [0, 0]; // average points from list
-    for (var i = 0; i < list.length; i++){
+    for (var i = 0; i < list.length; i++) {
         point2[0] += list[i][0];
         point2[1] += list[i][1];
     }
@@ -283,7 +357,7 @@ function distance(list, point1) {
 }
 
 var neighborhoods = []
-function Profile(age, occupation, ethnicity, familySize, income, residentStatus){
+function Profile(age, occupation, ethnicity, familySize, income, residentStatus) {
     this.name = age;
     this.occupation = occupation;
     this.ethnicity = ethnicity;
@@ -292,8 +366,8 @@ function Profile(age, occupation, ethnicity, familySize, income, residentStatus)
     this.residentStatus = residentStatus;
 }
 
-function SliderData(housePrice,houseImportance,recDist,recImportance,comDist,comImportance,entDist,entImportance,
-     restDist,restImportance){
+function SliderData(housePrice, houseImportance, recDist, recImportance, comDist, comImportance, entDist, entImportance,
+    restDist, restImportance) {
     this.housePrice = housePrice;
     this.houseImportance = houseImportance;
     this.recDist = recDist;
@@ -306,7 +380,7 @@ function SliderData(housePrice,houseImportance,recDist,recImportance,comDist,com
     this.restImportance = restImportance;
 }
 
-function NeighborhoodData(housePrice, recDist, comDist, restDist, entDist, name){
+function NeighborhoodData(housePrice, recDist, comDist, restDist, entDist, name) {
     this.housePrice = housePrice;
     this.recDist = recDist;
     this.comDist = comDist;
@@ -324,26 +398,26 @@ function NeighborhoodData(housePrice, recDist, comDist, restDist, entDist, name)
 // Make every neighborhood
 var neighborhoods = [];
 
-for (i = 0; i < 237; i++){
+for (i = 0; i < 237; i++) {
     // Construct data for each neighborhood in here
-    var neighborhood = NeighborhoodData(0,recDist,comDist,restDist,entDist,name);
+    var neighborhood = NeighborhoodData(0, recDist, comDist, restDist, entDist, name);
     neighborhoods.push(neighborhood);
 }
 
 // Make objects for user data in the user object
 user.profile = new Profile(name, age, occupation, ethnicity, familySize, income, residentStatus);
 user.sliderData = new SliderData(document.getElementById("housePrice").value,
-                                document.getElementById("houseImportance").value,
-                                document.getElementById("recDist").value,
-                                document.getElementById("recImportance").value,
-                                document.getElementById("comDist").value,
-                                document.getElementById("comImportance").value,
-                                document.getElementById("entDist").value,
-                                document.getElementById("entImportance").value,
-                                document.getElementById("restDist").value,
-                                document.getElementById("restImportance").value);
+    document.getElementById("houseImportance").value,
+    document.getElementById("recDist").value,
+    document.getElementById("recImportance").value,
+    document.getElementById("comDist").value,
+    document.getElementById("comImportance").value,
+    document.getElementById("entDist").value,
+    document.getElementById("entImportance").value,
+    document.getElementById("restDist").value,
+    document.getElementById("restImportance").value);
 
-function compare(a,b){
+function compare(a, b) {
     if (a.score < b.score)
         return -1;
     if (a.score > b.score)
@@ -352,25 +426,25 @@ function compare(a,b){
 }
 
 var user = {
-    findNeighborhood: function(){
+    findNeighborhood: function () {
         // Returns array of neighborhoods sorted from best to worst
         var i = 0;
-        for (n in neighborhoods){
+        for (n in neighborhoods) {
             // Gets a score from 0-5
             neighborhoods[n].houseScore = (6 - (Math.abs(user.SliderData.housePrice - neighborhoods[n].housePrice)))
-                                         * (6-user.SliderData.houseImportance/5);
+                * (6 - user.SliderData.houseImportance / 5);
             neighborhoods[n].recScore = (6 - (Math.abs(user.SliderData.recDist - neighborhoods[n].recDist)))
-                                         * (6-user.SliderData.recImportance/5);
+                * (6 - user.SliderData.recImportance / 5);
             neighborhoods[n].comScore = (6 - (Math.abs(user.SliderData.comDist - neighborhoods[n].comDist)))
-                                         * (6-user.SliderData.comImportance/5);
+                * (6 - user.SliderData.comImportance / 5);
             neighborhoods[n].restScore = (6 - (Math.abs(user.SliderData.restDist - neighborhoods[n].restDist)))
-                                         * (6-user.SliderData.restImportance/5);
+                * (6 - user.SliderData.restImportance / 5);
             neighborhoods[n].entScore = (6 - (Math.abs(user.SliderData.entDist - neighborhoods[n].entDist)))
-                                         * (6-user.SliderData.entDist/5);
+                * (6 - user.SliderData.entDist / 5);
 
             neighborhoods[n].score = (neighborhoods[n].houseScore + neighborhoods[n].recScore +
-                                     neighborhoods[n].comScore + neighborhoods[n].restScore +
-                                     neighborhoods[n].entScore) /5;
+                neighborhoods[n].comScore + neighborhoods[n].restScore +
+                neighborhoods[n].entScore) / 5;
             i++;
         }
         neighborhoods.sort(compare);
@@ -378,6 +452,6 @@ var user = {
 };
 
 user.findNeighborhood();
-for(i = (neighborhoods.length) - 1; i >= (neighborhoods.length) - 6; i--){
+for (i = (neighborhoods.length) - 1; i >= (neighborhoods.length) - 6; i--) {
     document.write(neighborhoods[i].name, ", score out of 5 : ", neighborhoods[i].score, "<br />");
 }
