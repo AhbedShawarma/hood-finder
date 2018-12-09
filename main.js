@@ -8,66 +8,6 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
-//function used to read in fireBase data
-function importanceUserData(importance1, importance2, importance3, importance4,
-    importance5, importance6, importance7, importance8, importance9, importance10) {
-    //creates an object
-    firebase.database().ref('importance').set({
-        importance: 'very important',
-        housePrice: importance1,
-        parks: importance2,
-        recreationCentres: importance3,
-        schools: importance4,
-        libraries: importance5,
-        golfCourses: importance6,
-        malls: importance7,
-        museums: importance8,
-        restaurants: importance9,
-        groceryStores: importance10
-    });
-}
-
-//retrieve housePriceImportance
-var ref = firebase.database().ref('importance/housePrice');
-ref.on('value', function(snapshot) {
-    console.log(snapshot.val());
-});
-var parksImportance = firebase.database().ref('importance/parks');
-parksImportance.on('value', function(snapshot) {
-    console.log(snapshot.val());
-});
-var recreationCentresImportance = firebase.database().ref('importance/recreationCentres');
-recreationCentresImportance.on('value', function (snapshot) {
-    console.log(snapshot.val());
-});
-var schoolsImportance = firebase.database().ref('importance/schools');
-schoolsImportance.on('value', function (snapshot) {
-    console.log(snapshot.val());
-});
-var librariesImportance = firebase.database().ref('importance/libraries');
-librariesImportance.on('value', function (snapshot) {
-    console.log(snapshot.val());
-});
-var golfCoursesImportance = firebase.database().ref('importance/golfCourses');
-golfCoursesImportance.on('value', function (snapshot) {
-    console.log(snapshot.val());
-});
-var mallsImportance = firebase.database().ref('importance/malls');
-mallsImportance.on('value', function (snapshot) {
-    console.log(snapshot.val());
-});
-var museumsImportance = firebase.database().ref('importance/museums');
-museumsImportance.on('value', function (snapshot) {
-    console.log(snapshot.val());
-});
-var restaurantsImportance = firebase.database().ref('importance/restaurants');
-restaurantsImportance.on('value', function (snapshot) {
-    console.log(snapshot.val());
-});
-var groceryStoriesImportance = firebase.database().ref('importance/groceryStores');
-groceryStoriesImportance.on('value', function (snapshot) {
-    console.log(snapshot.val());
-});
 
 var platform = new H.service.Platform({
     'app_id': 'xGmQiK6gdcySbGHGzc1F',
@@ -226,61 +166,63 @@ request[8].onload = function () {
 }
 request[8].send();
 
-var userCount = 0;
-var avgHousePrice = 0;
-var avgPark = 0;
-var avgRec = 0;
-var avgSchool = 0;
-var avgLibrary = 0;
-var avgGolf = 0;
-var avgMall = 0;
-var avgMuseum = 0;
-var avgRest = 0;
-var avgGrocery = 0;
+function addUserPreferences() {
+    firebase.database().ref('/').transaction(function(all) {
+        if (all) {
+            all.average.avgHousePrice *= all.average.userCount;
+            all.average.avgHousePrice += parseInt(user.sliderData.houseImportance);
 
-function addUserPreferences(){
-    avgHousePrice *= userCount;
-    avgHousePrice += user.sliderData.houseImportance;
+            all.average.avgPark *= all.average.userCount;
+            all.average.avgPark += parseInt(user.sliderData.parkImportance);
 
-    avgPark *= userCount;
-    avgPark += user.sliderData.parkImportance;
+            all.average.avgRec *= all.average.userCount;
+            all.average.avgRec += parseInt(user.sliderData.recImportance);
 
-    avgRec *= userCount;
-    avgRec += user.sliderData.recImportance;
+            all.average.avgSchool *= all.average.userCount;
+            all.average.avgSchool += parseInt(user.sliderData.schoolImportance);
 
-    avgSchool *= userCount;
-    avgSchool += user.sliderData.schoolImportance;
+            all.average.avgLibrary *= all.average.userCount;
+            all.average.avgLibrary += parseInt(user.sliderData.libImportance);
 
-    avgLibrary *= userCount;
-    avgLibrary += user.sliderData.libImportance;
+            all.average.avgGolf *= all.average.userCount;
+            all.average.avgGolf += parseInt(user.sliderData.gcImportance);
 
-    avgGolf *= userCount;
-    avgGolf += user.sliderData.gcImportance;
+            all.average.avgMall *= all.average.userCount;
+            all.average.avgMall += parseInt(user.sliderData.comImportance);
 
-    avgMall *= userCount;
-    avgMall += user.sliderData.comImportance;
+            all.average.avgMuseum *= all.average.userCount;
+            all.average.avgMuseum += parseInt(user.sliderData.mgImportance);
 
-    avgMuseum *= userCount;
-    avgMuseum += user.mgImportance;
+            all.average.avgRest *= all.average.userCount;
+            all.average.avgRest += parseInt(user.sliderData.restImportance);
 
-    avgRest *= userCount;
-    avgRest += user.sliderData.restImportance;
+            all.average.avgGrocery *= all.average.userCount;
+            all.average.avgGrocery += parseInt(user.sliderData.groceryImportance);
 
-    avgGrocery *= userCount;
-    avgGrocery += user.sliderData.groceryImportance;
+            for (var i = 0; i < all.worst.length; i++) {
+                all.worst[i] *= all.average.userCount;
+                all.worst[i] += neighborhoods[i].score;
+            }
 
-    userCount++;
+            all.average.userCount++;
 
-    avgHousePrice /= userCount;
-    avgPark /= userCount;
-    avgRec /= userCount;
-    avgSchool /= userCount;
-    avgLibrary /= userCount;
-    avgGolf /= userCount;
-    avgMall /= userCount;
-    avgMuseum /= userCount;
-    avgRest /= userCount;
-    avgGrocery /= userCount;
+            for (var i = 0; i < all.worst.length; i++) {
+                all.worst[i] /= all.average.userCount;
+            }
+
+            all.average.avgHousePrice /= all.average.userCount;
+            all.average.avgPark /= all.average.userCount;
+            all.average.avgRec /= all.average.userCount;
+            all.average.avgSchool /= all.average.userCount;
+            all.average.avgLibrary /= all.average.userCount;
+            all.average.avgGolf /= all.average.userCount;
+            all.average.avgMall /= all.average.userCount;
+            all.average.avgMuseum /= all.average.userCount;
+            all.average.avgRest /= all.average.userCount;
+            all.average.avgGrocery /= all.average.userCount;
+        }
+        return all;
+    });
 }
 
 var parkDistances = [];

@@ -3,7 +3,8 @@
         <title>HOOD237</title>
         <script src="geoxml3.js"></script>
         <script src="transitions.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
         <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
         <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
         <script src="main.js"></script>
@@ -11,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
     <body>
-        <h1 id = "mainheader">HOOD237</h1>
+        <h1 id = "mainheader">Hood237</h1>
         <div id = "sidebar">
             <div id="pMenuContainer" onclick="togglePMenu()" class = "active">
                 <p>Personal Profile</p>
@@ -647,11 +648,6 @@
             x.send(null);
             function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 16,
-                    center: {
-                        lat: 43.2557,
-                        lng: -79.8711
-                    }
                 });
                 parser = new geoXML3.parser({
                     map: map
