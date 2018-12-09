@@ -4,7 +4,6 @@ Recreation Centres:https://opendata.arcgis.com/datasets/272667665de646768db14e9f
 Educational Institutions:https://opendata.arcgis.com/datasets/cccae6f029334927856da6e20a50561f_19.geojson
 Food shops: https://opendata.arcgis.com/datasets/59afd6534e4849ccae93c9ed0049a445_14.geojson
 Location of Libraries: https://opendata.arcgis.com/datasets/67a54ea25d944cf7b66750ba57da822c_1.geojson
-City Waterfalls: https://opendata.arcgis.com/datasets/51c6d946f91249828bc1c594ce1b27d1_16.geojson
 Museum and Galleries: https://opendata.arcgis.com/datasets/6728810fb847489985d4b735502205a0_2.geojson
 Licensed Food Establishments: https://opendata.arcgis.com/datasets/85c1b5c9e931470d94f0c9ff5acaa341_2.geojson
 Golf Courses: https://opendata.arcgis.com/datasets/7b46f5eabbe0496fb168860ddc22fa35_14.geojson
