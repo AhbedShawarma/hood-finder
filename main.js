@@ -130,6 +130,7 @@ var libraryDistances = [];
 var waterfallDistances = [];
 var museumDistances = [];
 var restaurantDistances = [];
+var golfDistances = [];
 function processData() {
     var landmarks = doc.getElementsByTagName("Placemark");
 
@@ -215,6 +216,18 @@ function processData() {
                 minDistance = Math.min(minDistance, distance1);
         }
         mallDistances.push(minDistance * 100);
+    }
+
+    // Golf courses
+    for (var i = 0; i < landmarks.length; i++) {
+        var coordinates = landmarks[i].getElementsByTagName("coordinates")[0].childNodes[0].nodeValue.split(" ").map(a => a.split(",").map(b => parseFloat(b)));
+        var minDistance = 100;
+        for (var k = 0; k < data[8].features.length; k++) {
+            var distance1 = distance(coordinates, data[8].features[k].geometry.coordinates[0][0]);
+            if (!isNaN(distance1))
+                minDistance = Math.min(minDistance, distance1);
+        }
+        golfDistances.push(minDistance * 100);
     }
 
     // Food stores
