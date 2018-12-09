@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     <head>
-        <title>237 Hoods</title>
+        <title>HOOD237</title>
         <script src="geoxml3.js"></script>
         <script src="transitions.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
@@ -95,64 +95,64 @@
             <div id = "personalprofile" class = "active">
                 <br/>
                 <div class="dropdown">
-                    <button class="dropbtn">Select Age Range</button>
+                    <button class="dropbtn" id="ageSelect">Select Age Range</button>
                     <div class="dropdown-content">
-                        <a href="#">Under 18</a>
-                        <a href="#">18-30</a>
-                        <a href="#">31-60</a>
-                        <a href="#">Over 60</a>
+                        <a href="#" onclick="document.getElementById('ageSelect').innerText = 'Under 18';">Under 18</a>
+                        <a href="#" onclick="document.getElementById('ageSelect').innerText = '18-30';">18-30</a>
+                        <a href="#" onclick="document.getElementById('ageSelect').innerText = '31-60';">31-60</a>
+                        <a href="#" onclick="document.getElementById('ageSelect').innerText = 'Over 60';">Over 60</a>
                     </div>
                 </div>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Employment Status</button>
+                    <button class="dropbtn" id="employmentSelect">Employment Status</button>
                     <div class="dropdown-content">
-                        <a href="#">Unemployed</a>
-                        <a href="#">Student-Unemployed</a>
-                        <a href="#">In Training</a>
-                        <a href="#">Employed</a>
-                        <a href="#">Student-Employed</a>
+                        <a href="#" onclick="document.getElementById('employmentSelect').innerText = 'Unemployed';">Unemployed</a>
+                        <a href="#" onclick="document.getElementById('employmentSelect').innerText = 'Student-Unemployed';">Student-Unemployed</a>
+                        <a href="#" onclick="document.getElementById('employmentSelect').innerText = 'In-Training';">In-Training</a>
+                        <a href="#" onclick="document.getElementById('employmentSelect').innerText = 'Employed';">Employed</a>
+                        <a href="#" onclick="document.getElementById('employmentSelect').innerText = 'Student-Employed';">Student-Employed</a>
                     </div>
                 </div>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Ethnicity</button>
+                    <button class="dropbtn" id="ethnicitySelect">Ethnicity</button>
                     <div class="dropdown-content">
-                        <a href="#">White</a>
-                        <a href="#">South Asian</a>
-                        <a href="#">East Asian</a>
-                        <a href="#">Arab</a>
-                        <a href="#">Black</a>
+                        <a href="#" onclick="document.getElementById('ethnicitySelect').innerText = 'White';">White</a>
+                        <a href="#" onclick="document.getElementById('ethnicitySelect').innerText = 'South Asian';">South Asian</a>
+                        <a href="#" onclick="document.getElementById('ethnicitySelect').innerText = 'East Asian';">East Asian</a>
+                        <a href="#" onclick="document.getElementById('ethnicitySelect').innerText = 'Arab';">Arab</a>
+                        <a href="#" onclick="document.getElementById('ethnicitySelect').innerText = 'Black';">Black</a>
                     </div>
                 </div>
                 <br /><br /><br /><br /><br /><br /><br />
                 <div class="dropdown">
-                    <button class="dropbtn">Gender</button>
+                    <button class="dropbtn" id="genderSelect">Gender</button>
                     <div class="dropdown-content">
-                        <a href="#">Male</a>
-                        <a href="#">Female</a>
-                        <a href="#">Other</a>
+                        <a href="#" onclick="document.getElementById('genderSelect').innerText = 'Male';">Male</a>
+                        <a href="#" onclick="document.getElementById('genderSelect').innerText = 'Female';">Female</a>
+                        <a href="#" onclick="document.getElementById('genderSelect').innerText = 'Other';">Other</a>
                     </div>
                 </div>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Family Size</button>
+                    <button class="dropbtn" id="familySelect">Family Size</button>
                     <div class="dropdown-content">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3-4</a>
-                        <a href="#">Over 4</a>
+                        <a href="#" onclick="document.getElementById('familySelect').innerText = '1';">1</a>
+                        <a href="#" onclick="document.getElementById('familySelect').innerText = '2';">2</a>
+                        <a href="#" onclick="document.getElementById('familySelect').innerText = '3-4';">3-4</a>
+                        <a href="#" onclick="document.getElementById('familySelect').innerText = 'Over 4';">Over 4</a>
                     </div>
                 </div>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Yearly Income</button>
+                    <button class="dropbtn" id="incomeSelect">Yearly Income</button>
                     <div class="dropdown-content">
-                        <a href="#">Under $20000</a>
-                        <a href="#">$20000-$50000</a>
-                        <a href="#">$50000-$80000</a>
-                        <a href="#">$80000-$100000</a>
-                        <a href="#">Over $100000</a>
+                        <a href="#" onclick="document.getElementById('incomeSelect').innerText = 'Under $20000';">Under $20000</a>
+                        <a href="#" onclick="document.getElementById('incomeSelect').innerText = '$20000-$50000';">$20000-$50000</a>
+                        <a href="#" onclick="document.getElementById('incomeSelect').innerText = '$50000-$80000';">$50000-$80000</a>
+                        <a href="#" onclick="document.getElementById('incomeSelect').innerText = '$80000-$100000';">$80000-$100000</a>
+                        <a href="#" onclick="document.getElementById('incomeSelect').innerText = 'Over $100000';">Over $100000</a>
                     </div>
                 </div>
                 <br /><br /><br /><br /><br /><br /><br />

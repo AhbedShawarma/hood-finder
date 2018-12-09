@@ -8,9 +8,6 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
-firebase.database().ref('/Cow').set({
-    Cow: 'moo',
-});
 //function used to read in fireBase data
 function importanceUserData(importance1, importance2, importance3, importance4,
     importance5, importance6, importance7, importance8, importance9, importance10) {
@@ -58,7 +55,7 @@ golfCoursesImportance.on('value', function (snapshot) {
 var mallsImportance = firebase.database().ref('importance/malls');
 mallsImportance.on('value', function (snapshot) {
     console.log(snapshot.val());
-}); 
+});
 var museumsImportance = firebase.database().ref('importance/museums');
 museumsImportance.on('value', function (snapshot) {
     console.log(snapshot.val());
