@@ -168,7 +168,7 @@ var avgGrocery = 0;
 
 function addUserPreferences(){
     avgHousePrice *= userCount;
-    avgHousePrice += user.sliderData.housePrice;
+    avgHousePrice += user.sliderData.houseImportance;
 
     avgPark *= userCount;
     avgPark += user.sliderData.parkImportance;
@@ -196,7 +196,7 @@ function addUserPreferences(){
 
     avgGrocery *= userCount;
     avgGrocery += user.sliderData.groceryImportance;
-    
+
     userCount++;
 
     avgHousePrice /= userCount;
