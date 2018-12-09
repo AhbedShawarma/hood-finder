@@ -581,12 +581,11 @@ function setup() {
             }
             var cloned = JSON.parse(JSON.stringify(neighborhoods));
             cloned.sort(compare);
-            debug = cloned;
-            document.getElementById("1").innerText = cloned[cloned.length - 1].name;
-            document.getElementById("2").innerText = cloned[cloned.length - 2].name;
-            document.getElementById("3").innerText = cloned[cloned.length - 3].name;
-            document.getElementById("4").innerText = cloned[cloned.length - 4].name;
-            document.getElementById("5").innerText = cloned[cloned.length - 5].name;
+            document.getElementById("1").innerHTML = `<a href="http://www.google.com/search?q=${cloned[cloned.length - 1].name.split(" ").join("+")}+Hamilton" target="_blank" onclick='addUserPreferences()'>` + cloned[cloned.length - 1].name + "</a>";
+            document.getElementById("2").innerHTML = `<a href="http://www.google.com/search?q=${cloned[cloned.length - 2].name.split(" ").join("+")}+Hamilton" target="_blank" onclick='addUserPreferences()'>` + cloned[cloned.length - 2].name + "</a>";
+            document.getElementById("3").innerHTML = `<a href="http://www.google.com/search?q=${cloned[cloned.length - 3].name.split(" ").join("+")}+Hamilton" target="_blank" onclick='addUserPreferences()'>` + cloned[cloned.length - 3].name + "</a>";
+            document.getElementById("4").innerHTML = `<a href="http://www.google.com/search?q=${cloned[cloned.length - 4].name.split(" ").join("+")}+Hamilton" target="_blank" onclick='addUserPreferences()'>` + cloned[cloned.length - 4].name + "</a>";
+            document.getElementById("5").innerHTML = `<a href="http://www.google.com/search?q=${cloned[cloned.length - 5].name.split(" ").join("+")}+Hamilton" target="_blank" onclick='addUserPreferences()'>` + cloned[cloned.length - 5].name + "</a>";
             for (var i = 0; i < doc.getElementsByTagName("PolyStyle").length; i++) {
                 doc.getElementsByTagName("PolyStyle")[i].getElementsByTagName("color")[0].childNodes[0].nodeValue = "80" + hslToRgb((neighborhoods[i].score - 1) / 3 * 120, 100, 50);
             }
